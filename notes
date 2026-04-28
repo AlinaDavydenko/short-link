@@ -1,0 +1,16 @@
+Основа:
+
+FastAPI — REST API
+SQLAlchemy — работа с базой данных
+PostgreSQL — сама база
+Pydantic — валидация данных (встроена в FastAPI)
+
+Инфраструктура:
+
+Docker + Docker Compose
+pytest — тесты
+
+Опционально потом:
+
+Redis — кэширование популярных ссылок
+Alembic — миграции базы данных (часто идёт в паре с SQLAlchemy)
