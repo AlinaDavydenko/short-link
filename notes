@@ -1,4 +1,4 @@
-Основа:
+<!-- Основа: -->
 
 FastAPI — REST API
 SQLAlchemy — работа с базой данных
@@ -14,3 +14,7 @@ pytest — тесты
 
 Redis — кэширование популярных ссылок
 Alembic — миграции базы данных (часто идёт в паре с SQLAlchemy)
+
+<!-- useful information  -->
+Server launch:                      python3 -m uvicorn app.main:app --reload
+Add libs into requirements.txt:     pip freeze > requirements.txt
