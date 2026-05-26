@@ -15,10 +15,11 @@ A simple URL shortening service built with FastAPI and SQLAlchemy.
 - SQLAlchemy
 - SQLite
 - uvicorn
+- Docker
 
 ## Project Structure
 
-\```
+```
 url_shortener/
 ├── app/
 │   ├── db_core/
@@ -27,29 +28,39 @@ url_shortener/
 │   │   ├── database.py
 │   │   └── session.py
 │   ├── tests/
+│   │   └── test_router.py
 │   ├── main.py
 │   ├── router.py
 │   ├── schemas.py
 │   └── utils.py
+├── Dockerfile
+├── docker-compose.yml
 ├── requirements.txt
 └── README.md
-\```
+```
 
 ## Installation
 
-\```bash
+```bash
 git clone https://github.com/AlinaDavydenko/url-shortener
 cd url_shortener
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-\```
+```
 
 ## Running
+### Local
 
-\```bash
+```bash
 uvicorn app.main:app --reload
-\```
+```
+
+### Docker
+
+```bash
+docker-compose up --build
+```
 
 Open http://localhost:8000/docs to see the API documentation.
 
@@ -59,21 +70,28 @@ Open http://localhost:8000/docs to see the API documentation.
 Shorten a long URL.
 
 Request:
-\```json
+```json
 {"original_url": "https://example.com"}
-\```
+```
 
 Response:
-\```json
+```json
 {
   "original_url": "https://example.com",
   "short_code": "aB3kR9",
   "clicks": 0
 }
-\```
+```
 
 ### GET /{short_code}
 Redirect to original URL by short code.
 
 Returns HTTP 307 redirect to original URL.
 Returns HTTP 404 if short code not found.
+
+## Testing
+
+Run tests:
+```bash
+pytest app/tests/test_router.py -v
+```
