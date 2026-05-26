@@ -42,7 +42,7 @@ url_shortener/
 ## Installation
 
 ```bash
-git clone https://github.com/AlinaDavydenko/url-shortener
+git clone https://github.com/AlinaDavydenko/short-link
 cd url_shortener
 python -m venv .venv
 source .venv/bin/activate
