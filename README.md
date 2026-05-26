@@ -1,6 +1,6 @@
 # URL Shortener
 
-A simple URL shortening service built with FastAPI and SQLAlchemy.
+A simple URL shortening service built with FastAPI, SQLAlchemy and Docker. 
 
 ## Features
 
